@@ -6,6 +6,7 @@ let url = "https://dog.ceo/api/breeds/image/random";
 function getImage() {
   let itemElt = document.createElement("li");
   let imgElt = document.createElement("img");
+  itemElt.className = "image-item";
   imgElt.className = "image";
   fetch(url)
     .then((response) => response.json())
@@ -15,4 +16,12 @@ function getImage() {
       imagesContainer.append(itemElt);
     });
 }
+
+function deleteImage() {
+  let images = document.querySelectorAll(".image-item");
+  let lastImg = images[images.length - 1];
+  imagesContainer.removeChild(lastImg);
+}
+
 addBtn.addEventListener("click", () => getImage());
+deleteBtn.addEventListener("click", () => deleteImage());
