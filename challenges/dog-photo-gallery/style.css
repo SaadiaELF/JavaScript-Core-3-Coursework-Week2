@@ -1,6 +1,9 @@
+h1 {
+    text-align: center;
+}
+
 .buttons {
     display: flex;
-    gap: 2em;
     justify-content: center;
     margin: 2em;
 }
